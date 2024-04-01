@@ -1,0 +1,13 @@
+---
+- name: task for master
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: execute master.sh on master machine
+      script: master.sh
+- name: task for slave
+  hosts: all
+  become: yes
+  tasks:
+    - name: execute slave.sh on slave machine
+      script: slave.sh
